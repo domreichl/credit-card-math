@@ -31,7 +31,8 @@ def pay_off_dept(bal, mIR, month, lower, upper):
             return round(guess, 2) # base case
         elif bal < 0: # if balance is negative, reduce upper bound for monthly payment
             return pay_off_dept(balance, mIR, months, lower, guess)
-                # recursively reset balance and months while narrowing the guessing range
+                # narrow the guessing range recursively
+                # while resetting arguments 'bal' and 'month' to the global variables 'balance' and 'months'
         else: # if balance is positive, change increase lower bound for monthly payment
             return pay_off_dept(balance, mIR, months, guess, upper)
     else:
